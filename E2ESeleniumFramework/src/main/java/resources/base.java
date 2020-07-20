@@ -1,4 +1,4 @@
-package Project.E2ESeleniumFramework;
+package resources;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ public class base {
 public WebDriver InitializeDriver() throws IOException {
 		
 		Properties prop=new Properties();
-		FileInputStream fis =new FileInputStream("F:\\SeleniumGit\\E2EFramework\\data.properties");
+		FileInputStream fis =new FileInputStream("C:\\Users\\nfaye\\git\\repository2\\E2ESeleniumFramework\\src\\main\\java\\resources\\data.properties");
 	prop.load(fis);
 	
 		String BrowserName=prop.getProperty("browser");
