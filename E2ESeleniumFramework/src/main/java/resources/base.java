@@ -12,12 +12,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class base {
 	public WebDriver driver;
+	public Properties prop;
+	public String url;
 public WebDriver InitializeDriver() throws IOException {
 		
-		Properties prop=new Properties();
+		prop=new Properties();
 		FileInputStream fis =new FileInputStream("C:\\Users\\nfaye\\git\\repository2\\E2ESeleniumFramework\\src\\main\\java\\resources\\data.properties");
 	prop.load(fis);
-	
+	   url= prop.getProperty("url");
 		String BrowserName=prop.getProperty("browser");
 		System.out.println(BrowserName);
 		if(BrowserName.equals("chrome")) {
