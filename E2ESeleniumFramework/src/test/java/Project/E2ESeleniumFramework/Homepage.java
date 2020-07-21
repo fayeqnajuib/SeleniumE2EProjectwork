@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,11 +15,15 @@ import resources.base;
 
 public class Homepage extends base {
 	
-	@Test(dataProvider="getdata")
-	public void basePagenavigation(String username,String Password,String text) throws IOException{
-driver=InitializeDriver();
+	@BeforeTest
+	public void initialize() throws IOException {
+		driver=InitializeDriver();
 		System.out.println("dodked");
 		
+		
+	}
+	@Test(dataProvider="getdata")
+	public void basePagenavigation(String username,String Password,String text) throws IOException{
 		driver.get(url);
 	Landingpage l=new Landingpage(driver);
 	l.login().click();
@@ -28,6 +34,10 @@ System.out.println(text);
 l2.getloginbutton().click();
 
 	
+	}
+	@AfterTest
+	public void teardown(){
+		driver.close();
 	}
 @DataProvider()
 public Object[][] getdata() {
