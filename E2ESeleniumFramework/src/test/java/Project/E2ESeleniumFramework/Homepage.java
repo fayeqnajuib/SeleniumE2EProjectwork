@@ -2,6 +2,8 @@ package Project.E2ESeleniumFramework;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -14,7 +16,7 @@ import pageobjects.Loginpage;
 import resources.base;
 
 public class Homepage extends base {
-	
+	public static Logger log=LogManager.getLogger(Homepage.class.getName());
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver=InitializeDriver();
@@ -25,12 +27,13 @@ public class Homepage extends base {
 	@Test(dataProvider="getdata")
 	public void basePagenavigation(String username,String Password,String text) throws IOException{
 		driver.get(url);
+		log.info("URL Opened");
 	Landingpage l=new Landingpage(driver);
 	l.login().click();
 	Loginpage l2=new Loginpage(driver);
 l2.getemail().sendKeys(username);
 l2.getpassword().sendKeys(Password);
-System.out.println(text);
+log.info(text);
 l2.getloginbutton().click();
 
 	
