@@ -11,12 +11,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pageobjects.ForgotPassword;
 import pageobjects.Landingpage;
 import pageobjects.Loginpage;
 import resources.base;
 
 public class Homepage extends base {
-	public static Logger log=LogManager.getLogger(Homepage.class.getName());
+	public WebDriver driver;
+	//public static Logger log=LogManager.getLogger(Homepage.class.getName());
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver=InitializeDriver();
@@ -27,15 +29,17 @@ public class Homepage extends base {
 	@Test(dataProvider="getdata")
 	public void basePagenavigation(String username,String Password,String text) throws IOException{
 		driver.get(url);
-		log.info("URL Opened");
+	//	log.info("URL Opened");
 	Landingpage l=new Landingpage(driver);
-	l.login().click();
-	Loginpage l2=new Loginpage(driver);
+	Loginpage l2=l.login();
+	
 l2.getemail().sendKeys(username);
 l2.getpassword().sendKeys(Password);
-log.info(text);
+//log.info(text);
 l2.getloginbutton().click();
-
+ForgotPassword fp=l2.forgotpassword();
+fp.getEmail().sendKeys("abcd");
+fp.sendMeInstructions().click();
 	
 	}
 	@AfterTest

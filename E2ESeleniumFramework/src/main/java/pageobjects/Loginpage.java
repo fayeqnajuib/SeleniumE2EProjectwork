@@ -12,6 +12,7 @@ public class Loginpage {
 	By email=By.id("user_email");
 	By password=By.id("user_password");
 	By loginbutton=By.xpath("//input[@value='Log In']");
+	By Forgotpassword=By.linkText("Forgot Password?");
 
 public Loginpage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -31,5 +32,10 @@ public WebElement getpassword() {
 public WebElement getloginbutton() {
 	
 	return driver.findElement(loginbutton);
+}
+public ForgotPassword forgotpassword() {
+	driver.findElement(Forgotpassword).click();
+	return new ForgotPassword(driver);
+
 }
 }

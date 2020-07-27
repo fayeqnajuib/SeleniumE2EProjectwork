@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Project.E2ESeleniumFramework.Listeners"/>
+  </listeners>
+  <test parallel="tests" name="Homepage(failed)">
     <classes>
+      <class name="Project.E2ESeleniumFramework.Validatenavbar">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatenavbar -->
       <class name="Project.E2ESeleniumFramework.Homepage">
         <methods>
-          <include name="basePagenavigation" invocation-numbers="0"/>
-          <include name="teardown"/>
+          <include name="basePagenavigation" invocation-numbers="0 1"/>
           <include name="initialize"/>
         </methods>
       </class> <!-- Project.E2ESeleniumFramework.Homepage -->
+      <class name="Project.E2ESeleniumFramework.Validatetitle">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatetitle -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Homepage(failed) -->
+  <test parallel="tests" name="Validate Nav bar(failed)">
+    <classes>
+      <class name="Project.E2ESeleniumFramework.Validatenavbar">
+        <methods>
+          <include name="basePagenavigation"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatenavbar -->
+      <class name="Project.E2ESeleniumFramework.Homepage">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Homepage -->
+      <class name="Project.E2ESeleniumFramework.Validatetitle">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatetitle -->
+    </classes>
+  </test> <!-- Validate Nav bar(failed) -->
+  <test parallel="tests" name="Validate Title(failed)">
+    <classes>
+      <class name="Project.E2ESeleniumFramework.Validatenavbar">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatenavbar -->
+      <class name="Project.E2ESeleniumFramework.Homepage">
+        <methods>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Homepage -->
+      <class name="Project.E2ESeleniumFramework.Validatetitle">
+        <methods>
+          <include name="basePagenavigation"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Project.E2ESeleniumFramework.Validatetitle -->
+    </classes>
+  </test> <!-- Validate Title(failed) -->
+</suite> <!-- Failed suite [Suite] -->

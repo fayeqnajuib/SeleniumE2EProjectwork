@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,6 +16,7 @@ import resources.base;
 
 
 public class Validatenavbar extends base {
+	public WebDriver driver;
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver=InitializeDriver();

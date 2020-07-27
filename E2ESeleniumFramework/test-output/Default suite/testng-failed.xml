@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="Project.E2ESeleniumFramework.Homepage">
+      <class name="Project.E2ESeleniumFramework.Validatetitle">
         <methods>
-          <include name="basePagenavigation" invocation-numbers="0"/>
+          <include name="basePagenavigation"/>
           <include name="teardown"/>
           <include name="initialize"/>
         </methods>
-      </class> <!-- Project.E2ESeleniumFramework.Homepage -->
+      </class> <!-- Project.E2ESeleniumFramework.Validatetitle -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

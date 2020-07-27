@@ -19,10 +19,11 @@ public Landingpage(WebDriver driver) {
 this.driver=driver;
 }
 
-public WebElement login() {
+public Loginpage login() {
 	
-	return driver.findElement(signin);
-}
+	driver.findElement(signin).click();
+	return new Loginpage(driver);
+	}
 
 public WebElement title() {
 	
