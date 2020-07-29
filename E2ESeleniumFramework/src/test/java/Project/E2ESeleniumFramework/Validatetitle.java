@@ -24,14 +24,14 @@ public class Validatetitle extends base {
 		driver.get(url);
 	}
 	@Test
-	public void basePagenavigation() throws IOException{
+	public void validatetitle() throws IOException{
 driver=InitializeDriver();
 		System.out.println("dodked");
 		
 		driver.get(url);
 	Landingpage l=new Landingpage(driver);
 	l.title().getText();
-	Assert.assertEquals(l.title().getText(), "FEATURED CggOURSES");
+	Assert.assertEquals(l.title().getText(), "FEATURED COssURSES");
 	
 	}
 	@AfterTest

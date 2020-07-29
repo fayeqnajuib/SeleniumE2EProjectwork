@@ -22,12 +22,11 @@ public class Homepage extends base {
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver=InitializeDriver();
-		System.out.println("dodked");
-		
+				
 		
 	}
 	@Test(dataProvider="getdata")
-	public void basePagenavigation(String username,String Password,String text) throws IOException{
+	public void homepagel(String username,String Password,String text) throws IOException{
 		driver.get(url);
 	//	log.info("URL Opened");
 	Landingpage l=new Landingpage(driver);

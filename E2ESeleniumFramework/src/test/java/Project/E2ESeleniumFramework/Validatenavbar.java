@@ -25,7 +25,7 @@ public class Validatenavbar extends base {
 		driver.get(url);
 	}
 	@Test
-	public void basePagenavigation() throws IOException{
+	public void validatenavbar() throws IOException{
 driver=InitializeDriver();
 		System.out.println("dodked");
 		

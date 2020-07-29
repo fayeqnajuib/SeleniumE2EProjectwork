@@ -1,3 +1,3 @@
-11:43:19.152 [main] INFO  Project.E2ESeleniumFramework.Homepage - Restricted user
-11:43:22.100 [main] INFO  Project.E2ESeleniumFramework.Homepage - URL Opened
-11:43:22.967 [main] INFO  Project.E2ESeleniumFramework.Homepage - Non Restricted user
+18:02:42.102 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+18:02:42.106 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16
+18:02:42.107 [AsyncHttpClient-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8

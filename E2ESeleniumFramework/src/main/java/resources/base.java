@@ -27,12 +27,12 @@ public WebDriver InitializeDriver() throws IOException {
 		String BrowserName=prop.getProperty("browser");
 		System.out.println(BrowserName);
 		if(BrowserName.equals("chrome")) {
-			System.setProperty("WebDriver.chrome.driver", "c:\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
 			driver=new ChromeDriver();
 		}
 	
 		else if(BrowserName.equals("Firefox")){
-			System.setProperty("WebDriver.gecko.driver", "c:\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\gecko\\geckodriver.exe");
 			 driver=new FirefoxDriver();
 		}
 	

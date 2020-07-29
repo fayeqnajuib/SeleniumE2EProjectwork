@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
+<suite name="Suite">
 <listeners>
 <listener class-name="Project.E2ESeleniumFramework.Listeners"/>
 </listeners>
-  <test thread-count="5" name="Validate Nav bar">
+  <test name="Validate Nav bar">
     <classes>
     <class name="Project.E2ESeleniumFramework.Validatenavbar"/>
     </classes>
     </test>
-    <test name="Test">
-    <classes>
-      <class name="Project.E2ESeleniumFramework.AppTest"/>
-      </classes>
-    </test>
-       <test name="Validate Title">
+           <test name="Validate Title">
     <classes>
       <class name="Project.E2ESeleniumFramework.Validatetitle"/>
       </classes>
