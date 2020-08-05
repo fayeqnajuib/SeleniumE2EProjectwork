@@ -12,7 +12,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+ 
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>
+ 
 <build>
   
   <resources>
@@ -48,6 +52,12 @@
   <artifactId>testng</artifactId>
   <version>6.10</version>
   <scope>test</scope>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>29.0-jre</version>
 </dependency>
   
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

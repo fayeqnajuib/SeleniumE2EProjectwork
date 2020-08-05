@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class base {
@@ -21,18 +22,22 @@ public class base {
 public WebDriver InitializeDriver() throws IOException {
 		
 		prop=new Properties();
-		FileInputStream fis =new FileInputStream("C:\\Users\\nfaye\\git\\repository2\\E2ESeleniumFramework\\src\\main\\java\\resources\\data.properties");
+		FileInputStream fis =new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
 	prop.load(fis);
 	   url= prop.getProperty("url");
 		String BrowserName=prop.getProperty("browser");
-		System.out.println(BrowserName);
+	//String BrowserName=System.getProperty("browser");
+	  
+	   System.out.println(BrowserName);
 		if(BrowserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
-			driver=new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\java\\resources\\chromedriver.exe");
+			ChromeOptions options =new ChromeOptions();
+			options.addArguments("headless");
+			driver=new ChromeDriver(options);
 		}
 	
 		else if(BrowserName.equals("Firefox")){
-			System.setProperty("webdriver.gecko.driver", "C:\\gecko\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\src\\main\\java\\resources\\geckodriver.exe");
 			 driver=new FirefoxDriver();
 		}
 	

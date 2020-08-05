@@ -9,9 +9,9 @@ public class Landingpage {
 	
 	public WebDriver driver;
 	
-	By signin=By.linkText("Login");
-	By title=By.xpath("//*[@id=\"content\"]/div/div/h2");
-    By navbar=By.xpath("//*[@id=\"homepage\"]/header/div[2]/div/nav");
+	private By signin=By.linkText("Login");
+	private By title=By.xpath("//*[@id=\"content\"]/div/div/h2");
+   private By navbar=By.xpath("//*[@id=\"homepage\"]/header/div[2]/div/nav");
     
 public Landingpage(WebDriver driver) {
 		// TODO Auto-generated constructor stub

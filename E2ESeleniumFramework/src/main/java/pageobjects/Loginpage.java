@@ -9,10 +9,10 @@ public class Loginpage {
 	
 	public WebDriver driver;
 	
-	By email=By.id("user_email");
-	By password=By.id("user_password");
-	By loginbutton=By.xpath("//input[@value='Log In']");
-	By Forgotpassword=By.linkText("Forgot Password?");
+	private By email=By.id("user_email");
+	private By password=By.id("user_password");
+	private By loginbutton=By.xpath("//input[@value='Log In']");
+	private By Forgotpassword=By.linkText("Forgot Password?");
 
 public Loginpage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
